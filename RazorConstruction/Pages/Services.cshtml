@@ -1,0 +1,57 @@
+@page "/services"
+@model ServicesModel
+<div>
+             <!-- page-title-area start -->
+            <div class="page-title-area pt-160 pb-10">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="page-title text-center">
+                                <h1>Services</h1>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page-title-area end -->
+            <div class="services-area pt-10 pb-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-4 col-lg-4">
+                            <div class="servicee-sidebar mb-70">
+                                <div class="sidebar-link gray-bg">
+                                    <h3>Services</h3>
+                                    <ul>
+                                       @foreach (var x in Model.Services)
+                                       {
+                                           
+                                       
+                                        <li><a href="#">@x.Title</a></li>
+                                       }
+                                    </ul>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class="col-xl-8 col-lg-8">
+                            <div class="row">
+                                @foreach (var x in Model.Services)
+                                {
+                                    
+                                
+                                <div class="col-xl-6 col-lg-6 col-md-6">
+                                    <div class="service-box service-3 mb-60">
+                                        <img src="img/service/services1.jpg" alt="">
+                                        <h3><a href="javascript:void()">@x.Title</a></h3>
+                                        <p>@x.Description</p>
+                                    </div>
+                                </div>
+                                }
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            

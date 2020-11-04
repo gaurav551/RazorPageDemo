@@ -1,0 +1,23 @@
+@page "{id}"
+@model RazorConstruction.Areas.Admin.Pages.Messages.ViewModel
+
+SenderName : @Model.Message.SenderName
+<br>
+SenderPhone :  @Model.Message.SenderPhone
+<br>
+SenderEmail :  @Model.Message.SenderEmail
+<br>
+Subject :  @Model.Message.Subject
+<br>
+Message :  @Model.Message.Description
+<br>
+Sent On :  @Model.Message.SentOn
+<br>
+@if(Model.Message.FilePath==null)
+{
+<p>No Attachment in this Message</p>
+}
+else
+{
+<p>Attachment :</p>   <a href="/attachments/ @Model.Message.FilePath">@Model.Message.FilePath </a>
+}

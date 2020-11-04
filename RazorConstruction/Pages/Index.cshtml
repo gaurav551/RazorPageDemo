@@ -1,0 +1,251 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+ <div class="slider-area">
+                <div class="slider-active dot-style">
+                    <div class="single-slider height-100 d-flex align-items-center" style="background-image:url(/assets/img/slider/slide1.jpg)">
+                       <div class="container">
+                           <div class="row ">
+                               <div class="col-xl-6 col-lg-7 d-flex align-items-center">
+                                    <div class="slider-content pt-110">
+                                        <span data-animation="fadeInLeft" data-delay=".5s">We are startup business</span>
+                                        <h1 data-animation="fadeInLeft" data-delay=".5s">BUILDING WORLD TOGETHER</h1>
+                                        <a data-animation="fadeInLeft" data-delay="2s" href="/contact" class="btn">Contact Us</a>
+                                    </div>
+                               </div>
+                               <div class="col-xl-6 col-lg-5 d-none d-lg-block">
+                                    <div class="slide-img text-right pt-120 slider-full f-right" data-animation="fadeInRight" data-delay="2.5s">
+                                        <img src="/assets/img/slider/transparent-slide.png" alt="">
+                                    </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="single-slider height-100 d-flex align-items-center" style="background-image:url(/assets/img/slider/slide1.jpg)">
+                       <div class="container">
+                           <div class="row ">
+                               <div class="col-xl-6 col-lg-7 d-flex align-items-center">
+                                    <div class="slider-content pt-110">
+                                        <span data-animation="fadeInLeft" data-delay=".5s">We are startup business</span>
+                                        <h1 data-animation="fadeInLeft" data-delay="1s">BUILDING WORLD TOGETHER</h1>
+                                        <a data-animation="fadeInLeft" data-delay="2s" href="/contact" class="btn">Contact Us</a>
+                                    </div>
+                               </div>
+                               <div class="col-xl-6 col-lg-5 d-none d-lg-block">
+                                    <div class="slide-img text-right pt-120 slider-full f-right" data-animation="fadeInRight" data-delay="2.5s">
+                                        <img src="/assets/img/slider/transparent-slide.png" alt="">
+                                    </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                    <div class="single-slider height-100 d-flex align-items-center" style="background-image:url(/assets/img/slider/slide1.jpg)">
+                       <div class="container">
+                           <div class="row ">
+                               <div class="col-xl-6 col-lg-7 d-flex align-items-center">
+                                    <div class="slider-content pt-110">
+                                        <span data-animation="fadeInLeft" data-delay=".5s">We are startup business</span>
+                                        <h1 data-animation="fadeInLeft" data-delay="1s">BUILDING WORLD TOGETHER</h1>
+                                        <a data-animation="fadeInLeft" data-delay="2s" href="/contact" class="btn">Contact Us</a>
+                                    </div>
+                               </div>
+                               <div class="col-xl-6 col-lg-5 d-none d-lg-block">
+                                    <div class="slide-img text-right pt-120 slider-full f-right" data-animation="fadeInRight" data-delay="2.5s">
+                                        <img src="/assets/img/slider/transparent-slide.png" alt="">
+                                    </div>
+                               </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <!-- slider end -->
+            <!-- features-area start -->
+            <div class="features-area pt-100 pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="features-title text-center mb-80">
+                                <h2>Our Services <br>  <span>to lead your business.</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var x in Model.Services)
+                        {
+                            
+                        
+                        <div class="col-xl-4 col-lg-4 col-md-4">
+                            <div class="single-features text-center mb-30">
+                               
+                                <h2>@x.Title</h2>
+                                <p>@x.Description</p>
+                            </div>
+                        </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- features-area start -->
+            
+            <!-- features-area end -->
+            <!-- portfolio-area start -->
+            <div class="portfolio-area pt-100 pb-100">
+                <div class="container-full">
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="section-title section-title-2 text-center mb-50">
+                                <h2>Recent Projects</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-xl-12">
+                            <div class="portfolio-menu mb-40 text-center">
+                                <button class="active" data-filter="*">ALL</button>
+                                <button data-filter=".Building">BUILDINGS</button>
+                               
+                                <button data-filter=".House">HOUSE</button>
+                                <button data-filter=".Interior">INTERIOR</button>
+                                <button data-filter=".Office">OFFICE</button>
+                                 <button data-filter=".Othersw">Others</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters grid">
+                        @foreach (var x in Model.Projects)
+                        {
+                            
+                        
+                        <div class="col-xl-4 col-lg-4 col-md-6 grid-item @x.Category">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-thumb">
+                                    <img src="/projects/@x.PhotoUrl" alt="" width="200px" height="300px">
+                                </div>
+                                <div class="portfolio-content">
+                                    <div class="icon"><a class="popup-img" href="/projects/@x.PhotoUrl"><span></span></a></div>
+                                    <h3><a href="javascript:void()">@x.Name</a></h3>
+                                    <p><a href="javascript:void()">@x.Description</a></p>
+                                    <br>
+                                    <span>Project Category : @x.Category</span>
+                                    <br>
+                                    <span>Status : @x.Status</span>
+                                    <br>
+                                    <span>Client : @x.Client</span>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    
+                    </div>
+                    <div class="row no-gutters">
+                       <div class="col-xl-12">
+                            <div class="videw-project text-center mt-50">
+                                <a href="#" class="btn brand-btn">ALL PROJECTS</a>
+                            </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+            <!-- portfolio-area end -->
+            <div>
+                <div class="container">
+                    <div class="row">
+                       
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="promotion-text promo-2 pt-10 pb-110">
+                                <h3>Don’t Wait For
+                                    <br> anything. Buy it today!</h3>
+                                <span>Do creative for your fashion website</span>
+                                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexe rc itation ullamco laboris nisi
+                                    ut aliquip ex ea com modo consequat. Duis aute irure.</P>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- team-area strat -->
+            <div class="team-area pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section-title section-title-2 text-center mb-70">
+                                <h2>Meet Our Experts</h2>
+                                <p>We have a team of highly dedicated engineers working to serve the quality service for your needs</p>
+                                <a href="/careers">Apply for a job ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var x in Model.Members)
+                        {
+                            
+                        
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="single-team text-center mb-30">
+                                <div class="team-img">
+                                    <img src="/members/@x.PhotoUrl" alt="">
+                                    <div class="team-icon">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="team-info">
+                                    <h3>@x.Name</h3>
+                                    <span>@x.Designation</span>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- team-area end -->
+            <!-- counter-area start -->
+            <div class="counter-area pt-75 pb-45" style="background-image:url(/assets/img/bg/bg-counter.jpg)">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter counter-2  d-xl-flex mb-30">
+                                <span>10</span>
+                                <p>YEARS OF <br> EXPERIENCE</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter counter-2  d-xl-flex mb-30">
+                                <span>120</span>
+                                <p>Successful <br> entrepreneurs</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter counter-2 d-xl-flex mb-30">
+                                <span>80</span>
+                                <p>COMPANIES <br> FOUNDED</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter counter-2 d-xl-flex  mb-30">
+                                <span>240</span>
+                                <p>BOOKS, DVDS <br> & PODCASTS</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

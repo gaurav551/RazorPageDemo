@@ -1,0 +1,30 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<div class="wrapper-box pl-75 pr-75">
+             <!-- page-title-area start -->
+            <div class="page-title-area pt-160 pb-10" style="background-image: url(img/bg/page-title.jpg)">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="page-title text-center">
+                                <h1>Privacy</h1>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+@if(Model.PrivacyPolicy!=null)
+{
+<p>@Model.PrivacyPolicy</p>
+}
+else
+{
+ <p>Use this page to detail your site's privacy policy.</p>
+   
+}
+</div>

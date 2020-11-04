@@ -1,0 +1,55 @@
+@page
+@model RazorConstruction.Areas.Admin.Pages.Contact.ManageModel
+ @if(Model.Message!=null)
+              {
+                <div class="alert alert-success alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                 @Model.Message
+                </div>
+              }
+             <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Manage contact </h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+             
+              <form method="POST">
+                <div class="card-body">
+                   <div class="form-group">
+                     <input type="hidden" asp-for="Contact.Id">
+                    <label >Phone</label>
+                    <input type="text" class="form-control" asp-for="Contact.Phone"  placeholder="9814913728">
+                    <span asp-validation-for="Contact.Phone" class="text-danger"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" asp-for="Contact.Email" placeholder="Enter email">
+                    <span asp-validation-for="Contact.Email" class="text-danger"></span>
+                  </div>
+                   <div class="form-group">
+                    <label >Country</label>
+                    <input type="text" class="form-control"  asp-for="Contact.Country" placeholder="Nepal">
+                    <span asp-validation-for="Contact.Country" class="text-danger"></span>
+                  </div>
+                   <div class="form-group">
+                    <label >City</label>
+                    <input type="text" class="form-control" asp-for="Contact.City"  placeholder="Kathmandu">
+                    <span asp-validation-for="Contact.City" class="text-danger"></span>
+                  </div>
+                   <div class="form-group">
+                    <label >Address</label>
+                    <input type="text" class="form-control"  asp-for="Contact.Address" placeholder="Balkot-4">
+                    <span asp-validation-for="Contact.Address" class="text-danger"></span>
+                  </div>
+                  
+                
+                 
+                </div>
+                 <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

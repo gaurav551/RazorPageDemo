@@ -1,0 +1,84 @@
+@page 
+@model RazorConstruction.Areas.Admin.Messages.InboxModel
+
+ <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Projects</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th >
+                          Sender
+                      </th>
+                      <th>
+                         Subject
+                      </th>
+                      <th >
+                         SentOn
+                      </th>
+                     
+                      <th colspan="2">
+                          Action
+                      </th>
+                      
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach (var x in Model.Messages)
+                  {
+                      
+                  
+                  <tr>
+                      <td>
+                          @x.SenderName
+                      </td>
+                      <td>
+                          <a>
+                              @x.Subject
+                          </a>
+                         
+                         
+                      </td>
+                      <td>
+                          <a>
+                              @x.SentOn
+                          </a>
+                         
+                         
+                      </td>
+                       <td class="project-actions text-right">
+                          <a asp-page="/Messages/View" asp-route-id="@x.Id" class="btn btn-primary btn-sm">
+                              <i class="fas fa-folder">
+                              </i>
+                              View
+                          </a>
+                         
+                          <a class="btn btn-danger btn-sm" asp-page="/Messages/Delete" asp-route-id="@x.Id">
+                              <i class="fas fa-trash">
+                              </i>
+                              Delete
+                          </a>
+                      </td>
+                  </tr>
+                  }
+                
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>

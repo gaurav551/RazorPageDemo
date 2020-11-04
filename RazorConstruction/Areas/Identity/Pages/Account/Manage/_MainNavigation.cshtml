@@ -1,0 +1,181 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<aside class="main-sidebar elevation-2 sidebar-light-primary">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="/adminlte/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar user (optional) -->
+        @if (SignInManager.IsSignedIn(User))
+        {
+
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+
+               
+
+                <div class="info">
+                    <a href="#" class="d-block">
+                        @User.Identity.Name
+                            
+                        
+                    </a>
+                </div>
+            </div>
+        }
+
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+                <li class="nav-item">
+                    <a is-active-page asp-area="Admin" asp-page="/Index" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Home
+                        </p>
+                    </a>
+                </li>
+
+               
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Members
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Members/Add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add</p>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Members/View" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                 <li class="nav-item">
+                    <a is-active-page asp-area="Admin" asp-page="/Contact/Manage" class="nav-link">
+                        <i class="nav-icon fas fa-phone"></i>
+                        <p>
+                            Contact
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#"  class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Projects
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Projects/Add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add</p>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Projects/View" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a  href="#" class="nav-link">
+                        <i class="nav-icon fas fa-image"></i>
+                        <p>
+                            Services
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Services/Add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add</p>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Services/View" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Jobs
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Careers/Add" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Add</p>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a is-active-page asp-area="Admin" asp-page="/Careers/View" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>View</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                 <li class="nav-item">
+                    <a is-active-page asp-area="Admin" asp-page="/Messages/Inbox" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Messages
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Privacy Policy</li>
+                <li class="nav-item">
+                    <a is-active-page asp-area="Admin" asp-page="/Privacy/Manage" class="nav-link">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Policy
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Setting</li>
+                <li class="nav-item">
+                    <a is-active-page asp-area="Identity" asp-page="/Account/Manage/Index" class="nav-link">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Account Settings
+                        </p>
+                    </a>
+                </li>
+               
+
+            </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+</aside>

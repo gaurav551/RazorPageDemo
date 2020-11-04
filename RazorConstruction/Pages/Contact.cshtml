@@ -1,0 +1,149 @@
+@page "/contact"
+@model ContactModel
+ <div >
+             <!-- page-title-area start -->
+            <div class="page-title-area pt-160 pb-10" style="background-image: url(img/bg/page-title.jpg)">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="page-title text-center">
+                                <h1>Contact us</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb justify-content-center">
+                                        <li class="breadcrumb-item">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            <a href="#">Library</a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">Contact us</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page-title-area end -->
+            <!-- blog-area start -->
+           <div class="contact-area pt-100">
+               <div class="container">
+                   <div class="row">
+                       <div class="col-xl-6 col-lg-6">
+                           <div class="contact-form gray-bg">
+                               <h3>Do you have any question?</h3>
+                               <form id="contact-form" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-xl-6">
+                                            <input asp-for="Message.SenderName" type="text" placeholder="Name">
+                                            <span class="text-danger" asp-validation-for="Message.SenderName"></span>
+                                        </div>
+                                         <div class="col-xl-6">
+                                            <input asp-for="Message.SenderPhone" type="text" placeholder="Phone">
+                                            <span class="text-danger" asp-validation-for="Message.SenderPhone"></span>
+                                        </div>
+                                          <div class="col-xl-6">
+                                            <input asp-for="Message.Subject" type="text" placeholder="Subject">
+                                            <span class="text-danger" asp-validation-for="Message.Subject"></span>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <input asp-for="Message.SenderEmail"  type="email" placeholder="Email">
+                                            <span class="text-danger" asp-validation-for="Message.SenderEmail"></span>
+                                        </div>
+                                        <div class="col-xl-12">
+                                           <input type="file" asp-for="Attachment" accept="application/pdf" placeholder="Message">
+                                           
+                                        </div>
+                                        <div class="col-xl-12">
+                                           <textarea asp-for="Message.Description"  cols="30" rows="10" placeholder="Message"></textarea>
+                                           <span class="text-danger" asp-validation-for="Message.Description"></span>
+                                          
+                                        </div>
+                                         <button class="btn brand-btn" type="submit">send message</button>
+                                    </div>
+                               </form>
+                               <p class="ajax-response"></p>
+                                @if(Model.result!=null)
+              {
+                <div class="alert alert-success alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                 @Model.result
+                </div>
+              }
+                           </div>
+                       </div>
+                       <div class="col-xl-6 col-lg-6">
+                           <div class="contact-info">
+                               <span>CONTACT</span>
+                               <h2>keep in touch</h2>
+                               <div class="row">
+                                   <div class="col-xl-6">
+                                       <div class="contact-meta mb-40">
+                                           <div class="contact-meta-info">
+                                               <h4>Phone</h4>
+                                              
+                                               <p>@Model.Contact.Phone</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-xl-6">
+                                       <div class="contact-meta mb-40">
+                                           <div class="contact-meta-info">
+                                               <h4>E-mail</h4>
+                                               
+                                               <p>@Model.Contact.Email</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="col-xl-12">
+                                       <div class="contact-meta">
+                                           <div class="contact-meta-info">
+                                               <h4>Address</h4>
+                                               <p>@Model.Contact.Address, @Model.Contact.City</p>
+                                               <p>@Model.Contact.Country</p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+            <!-- blog-area end -->
+            <!-- counter-area start -->
+            <div class="counter-area pt-75 pb-45">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="img/counter/theme-icon1.png" alt="">
+                                <span class="counter">5120</span>
+                                <p>happy customers</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="img/counter/theme-icon2.png" alt="">
+                                <span class="counter">4351</span>
+                                <p>completed projects</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="img/counter/theme-icon3.png" alt="">
+                                <span class="counter">1200</span>
+                                <p>best engineers</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="img/counter/theme-icon4.png" alt="">
+                                <span class="counter">098</span>
+                                <p>our branches</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- counter-area end -->

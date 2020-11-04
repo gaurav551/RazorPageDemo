@@ -1,0 +1,88 @@
+@page
+@model RazorConstruction.Areas.Admin.Pages.Careers.ViewModel
+
+ <section class="content">
+
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">Careers</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fas fa-minus"></i></button>
+            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fas fa-times"></i></button>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <table class="table table-striped projects">
+              <thead>
+                  <tr>
+                      <th style="width: 1%">
+                          #
+                      </th>
+                      <th style="width: 20%">
+                        Title
+                      </th>
+                      <th style="width: 30%">
+                         Description
+                      </th>
+                     
+                     
+                      <th >
+                        Action
+                      </th>
+                  </tr>
+              </thead>
+              <tbody>
+                  @foreach (var x in Model.Jobs)
+                  {
+                      
+                  
+                  <tr>
+                      <td>
+                          #
+                      </td>
+                      <td>
+                          <a>
+                              @x.Title
+                          </a>
+                         
+                         
+                      </td>
+                      
+                     
+                      <td>
+                        @(x.Description.Length>55? x.Description.Substring(0,54)+"..." : x.Description)
+                      </td>
+                      <td class="project-actions text-right">
+                         
+                         
+                         
+                      </td>
+                      <td class="project-actions text-right">
+                         
+                         
+                          <a class="btn btn-primary btn-sm" asp-page="/Careers/Edit" asp-route-id="@x.Id">
+                              <i class="fas fa-pencil">
+                              </i>
+                              Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm" asp-page="/Careers/Delete" asp-route-id="@x.Id">
+                              <i class="fas fa-pencil">
+                              </i>
+                              Delete
+                          </a>
+                      </td>
+                  </tr>
+                  }
+                
+              </tbody>
+          </table>
+        </div>
+        <!-- /.card-body -->
+      </div>
+      <!-- /.card -->
+
+    </section>

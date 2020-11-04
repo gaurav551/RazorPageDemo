@@ -1,0 +1,120 @@
+ @page "/about"
+ @model AboutUsModel
+ <div>
+            <div class="page-title-area pt-160 pb-10">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="page-title text-center">
+                                <h1>About us</h1>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- promotion-area start -->
+            <div>
+                <div class="container">
+                    <div class="row">
+                       
+                        <div class="col-xl-12 col-lg-12 col-md-12">
+                            <div class="promotion-text promo-2 pt-10 pb-110">
+                                <h3>Don’t Wait For
+                                    <br> anything. Buy it today!</h3>
+                                <span>Do creative for your fashion website</span>
+                                <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexe rc itation ullamco laboris nisi
+                                    ut aliquip ex ea com modo consequat. Duis aute irure.</P>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- promotion-area end -->
+             <!-- team-area start -->
+            <!-- team-area strat -->
+            <div class="team-area pb-70">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="section-title section-title-2 text-center mb-70">
+                                <h2>Meet Our Experts</h2>
+                                <p>We have a team of highly dedicated engineers working to serve the quality service for your needs</p>
+                                <a href="/careers">Apply for a job ></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var x in Model.Members)
+                        {
+                            
+                        
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="single-team text-center mb-30">
+                                <div class="team-img">
+                                    <img src="/members/@x.PhotoUrl" alt="">
+                                    <div class="team-icon">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-google-plus-g"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="team-info">
+                                    <h3>@x.Name</h3>
+                                    <span>@x.Designation</span>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- team-area end -->
+            <!-- features-area end -->
+            <!-- counter-area start -->
+            <div class="counter-area pt-75 pb-45">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="/assets/img/counter/theme-icon1.png" alt="">
+                                <span class="counter">5120</span>
+                                <p>happy customers</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="/assets/img/counter/theme-icon2.png" alt="">
+                                <span class="counter">4351</span>
+                                <p>completed projects</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="/assets/img/counter/theme-icon3.png" alt="">
+                                <span class="counter">1200</span>
+                                <p>best engineers</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-3">
+                            <div class="single-couter text-center mb-30">
+                                <img src="/assets/img/counter/theme-icon4.png" alt="">
+                                <span class="counter">098</span>
+                                <p>our branches</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- counter-area end -->

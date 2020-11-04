@@ -1,0 +1,11 @@
+@page "{id}"
+@model RazorConstruction.Areas.Admin.Pages.Careers.DeleteModel
+<h3>Delete Confirmation</h3>
+ <div class="alert alert-danger alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                Are you sure want to delete @Model.Job.Title;
+                </div>
+                <form method="POST">
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                    <a asp-page="/Careers/View" class="btn btn-primary">No</a>
+                </form>

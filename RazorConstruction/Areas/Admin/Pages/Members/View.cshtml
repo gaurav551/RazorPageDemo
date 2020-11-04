@@ -1,0 +1,46 @@
+@page
+@model RazorConstruction.Areas.Admin.Pages.Members.ViewModel
+ <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Latest Members</h3>
+
+                    <div class="card-tools">
+                   
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <ul class="users-list clearfix">
+<div class="row">
+                        @foreach (var item in Model.MemberList)
+{
+   
+   <div class="col-md-4">
+            <!-- Widget: user widget style 1 -->
+            <div class="card card-widget widget-user">
+              <!-- Add the bg color to the header using any of the bg-* classes -->
+              <div class="widget-user-header bg-info">
+                <h3 class="widget-user-username">@item.Name</h3>
+                <h5 class="widget-user-desc">@item.Designation</h5>
+              </div>
+              <div class="widget-user-image">
+                <img class="img-circle elevation-2" src="/members/@item.PhotoUrl" alt="User Avatar">
+              </div>
+            </div>
+             <a asp-page="/Members/Delete" class="btn btn-danger" asp-route-id="@item.Id">Delete</a>
+            <!-- /.widget-user -->
+   </div>
+                     
+}
+</div>
+                      
+                     
+                    </ul>
+                    <!-- /.users-list -->
+                  </div>
+ </div>
+ 

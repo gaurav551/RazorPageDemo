@@ -1,0 +1,14 @@
+@page "{id}"
+@model RazorConstruction.Areas.Admin.Pages.Projects.ProjectModel
+
+Project Name : @Model.Project.Name
+<br>
+Description  :@Model.Project.Description
+<br>
+Category     : @Model.Project.Category
+<br>
+Status       : @Model.Project.Status
+<br>
+Client       : @Model.Project.Client
+<br>
+Image        : <img src="/projects/@Model.Project.PhotoUrl">
